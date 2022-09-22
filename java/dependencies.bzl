@@ -14,6 +14,7 @@ def gen_java_deps():
             "com.typesafe:config:1.3.2",
             "commons-io:commons-io:2.7",
             "de.ruedigermoeller:fst:2.57",
+            "com.fasterxml.jackson.core:jackson-core:2.10.0",
             "javax.xml.bind:jaxb-api:2.3.0",
             "org.apache.commons:commons-lang3:3.4",
             "org.msgpack:msgpack-core:0.8.20",
@@ -33,6 +34,14 @@ def gen_java_deps():
                 version = "7.3.0",
                 exclusions = [
                     "org.yaml:snakeyaml",
+                ]
+            ),
+            maven.artifact(
+                group = "de.ruedigermoeller",
+                artifact = "fst",
+                version = "2.57",
+                exclusions = [
+                    "com.fasterxml.jackson.core:jackson-core",
                 ]
             ),
         ],
